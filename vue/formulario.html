@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="view-port" content="width=divice-width, initial=1.0" />
+
+        <title>Maquetando Framework Fronted JS</title>
+        <link rel="stylesheet" type="text/css"  href="assets/css/style.css">
+        <body>
+            <header id="cabecera">
+                <!--LOGO DEL SITIO-->
+                <div class="center">
+                    <!--LOGO DEL CITIO-->
+                    <div class="logo">
+                        <img src="assets/imagenes/vue.png" class="app-logo">
+                        <span id="brand">
+                            <strong>Master</strong> Vue
+                        <span>
+                    </span>
+                </div>
+                        
+
+                    <!--MENU NAV-->
+                    <nav id="menu">
+                        <ul>
+                            <li>
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="formulario.html">Formulario</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!--LIMPIAR LOS FLOTADOS-->
+                    <div class="clearFix"></div>
+                </div>
+            </header>
+            <div class="center">
+                <section id="content">
+                    <h1 class="subHeader">Formulario</h1>
+                    <form class="mid-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Apellidos</label>
+                            <input type="text" name="apellidos" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Biografia</label>
+                            <textarea nam="bio"></textarea>
+                        </div>
+                        <div class="form-group radioButtons">
+                            <input type="radio" name="genero" value="hombre" /> Hombre 
+                            <input type="radio" name="genero" value="mujer" /> Mujer
+                            <input type="radio" name="genero" value="otro" /> Otro 
+                        </div>
+                <!--LIMPIAR LOS FLOTADOS-->
+                <div class="clearFix"></div>
+
+                        <input type="submit" value="Enviar" class="btn btn-success">
+                    </form>
+                </section>
+                <aside id="sidebar">
+                    <div id="nav-blog" class="sidebar-item">
+                        <h3>Puedes hacer esto</h3>
+                        <a href="#" class="btn btn-success">Crear artículo</a>
+                    </div>
+    
+                    <div id="search" class="sidebar-item">
+                            <h3>Buscador</h3>
+                            <p>Encuentra el artículo que buscas</p>
+                            <form>
+                                <input type="text" name="search" />
+                                <input type="submit" name="submit" value="Buscar" class="btn" />
+                            </form>
+                    </div>
+                </aside>
+    
+    
+                <!--LIMPIAR LOS FLOTADOS-->
+                <div class="clearFix"></div>
+ 
+            </div>
+
+            <!--PIE DE PAGINA (FOOTER)-->
+            <footer id="footer">
+                <div class="center">
+                    <p>&copy; Tienda online con Vue JS</p>
+                </div>
+            </footer>
+        </body>
+    </head>
+</html>

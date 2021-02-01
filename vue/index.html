@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="view-port" content="width=divice-width, initial=1.0" />
+
+        <title>Maquetando Framework Fronted JS</title>
+        <link rel="stylesheet" type="text/css"  href="assets/css/style.css">
+        <body>
+            <header id="cabecera">
+                <!--LOGO DEL SITIO-->
+                <div class="center">
+                    <!--LOGO DEL CITIO-->
+                    <div class="logo">
+                        <img src="assets/imagenes/vue.png" class="app-logo">
+                        <span id="brand">
+                            <strong>Master</strong> Vue
+                        <span>
+                    </span>
+                </div>
+                        
+
+                    <!--MENU NAV-->
+                    <nav id="menu">
+                        <ul>
+                            <li>
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="formulario.html">Formulario</a>
+                            </li>
+                            <li>
+                                <a href="formulario.html">Pagina 1</a>
+                            </li>
+                            <li>
+                                <a href="formulario.html">Pagina</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!--LIMPIAR LOS FLOTADOS-->
+                    <div class="clearFix"></div>
+                </div>
+            </header>
+            <div id="slider" class="slider-big">
+                <h1>Hola mundo bienvenido a mi pagina web desde 0, con framework Vue JS</h1>
+                <a href="#" class="btn-white">Ir al bloc</a>
+            </div>
+            <div class="center">
+                <section id="content">
+                    <h2 class="subHeader">Ultimos artículos </h2>
+                    <!--ULTIMOS ARTÍCULOS-->
+                    <script>
+                        window.addEventListener("load", function(){
+                            var template = document.getElementById("article-template");
+                            
+                            var articles = document.getElementById("articles");
+
+                            for (var i=0; i<5; i++){
+                                
+                                var clonado = template.cloneNode(true);
+                                clonado.removeAttribute("id");
+                                var h2 = clonado.getElementsByTagName("h2")[0];
+                                h2.innerHTML = h2.textContent+' '+i;
+                                articles.appendChild(clonado);
+                            }
+                        });
+                    </script>
+                    <div id="articles">
+                    <article class="article-item" id="article-template">
+                        <div class="image-wrap">
+                            <img src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8" alt="paisaje">
+                        </div>
+ 
+                            <h2>Artículo de prueba</h2>
+                            <span class="date">Hace 5 minutos</span>
+                            <a href="#">Leer más</a>
+                            <!--LIMPIAR LOS FLOTADOS-->
+                            <div class="clearFix"></div>
+                    </article>
+                </div>
+                </section>
+                <aside id="sidebar">
+                    <div id="nav-blog" class="sidebar-item">
+                        <h3>Puedes hacer esto</h3>
+                        <a href="#" class="btn btn-success">Crear artículo</a>
+                    </div>
+    
+                    <div id="search" class="sidebar-item">
+                            <h3>Buscador</h3>
+                            <p>Encuentra el artículo que buscas</p>
+                            <form>
+                                <input type="text" name="search" />
+                                <input type="submit" name="submit" value="Buscar" class="btn" />
+                            </form>
+                    </div>
+                </aside>
+    
+    
+                <!--LIMPIAR LOS FLOTADOS-->
+                <div class="clearFix"></div>
+ 
+            </div>
+
+            <!--PIE DE PAGINA (FOOTER)-->
+            <footer id="footer">
+                <div class="center">
+                    <p>&copy; Tienda online con Vue JS</p>
+                </div>
+            </footer>
+        </body>
+    </head>
+</html>
