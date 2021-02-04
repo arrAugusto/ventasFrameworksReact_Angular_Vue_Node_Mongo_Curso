@@ -20,6 +20,7 @@ var controller = {
     },
     
     save: (req, res)=>{
+    
         //obtener datos post que el usuario envie
         var params = req.body;
         console.log(params); 
@@ -45,29 +46,25 @@ var controller = {
             article.image = null;
 
             
-            
         //guardar articulos
             article.save((err, articleStore)=>{
                 //articulos no se guardaron correctamente
                 if (err || !articleStore){
-                    return res.status(200).send({
+                    return res.status(404).send({
                         status: 'error',
-                        message: 'datos invalidos'
+                        message: 'datos incorrectos'
                     });
-        
+            
                 }
+
+                    
                 //sino se guardan los articulos
                 return res.status(200).send({
                     status: 'success',
-                    article: articleStore
+                    message: articleStore
                 });
                     
             })
-        //responder respuesta
-            return res.status(200).send({
-                status: 'success',
-                article
-            });
 
         }else{
             return res.status(200).send({
@@ -77,9 +74,41 @@ var controller = {
     
         }
 
+    },
+    getArticles:(req, res)=>{
+        var query = Article.find({});
+        var last = req.params.last;
+        //find
+        if (last || last!=undefined){
+            query.limit(3);
+        }
+        query.exec((err, articles)=>{
+            if (err){
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al devolver articles' 
+                });
+            }
+            if (!articles){
+                return res.status(404).send({
+                    status: 'success',
+                    message: 'No existen datos por mostrar' 
+                });
+
+            }
+            return res.status(200).send({
+                status: 'success',
+                articles 
+            });
+    
+        })
+    },
+    getArticle:(req, res)=>{
         return res.status(200).send({
-            article: params
+            status: 'success',
+            articles 
         });
+
     }
 };//end controler
 

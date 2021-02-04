@@ -12,6 +12,8 @@ router.get('/test-de-controller', ArticleController.test);
 
 //rutas utiles
 router.post('/save', ArticleController.save);
+router.get('/mostrarArticulos/:last?', ArticleController.getArticles);
+router.get('/article/:last', ArticleController.getArticles);
 
 
 module.exports = router;
